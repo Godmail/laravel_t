@@ -5,6 +5,6 @@
  * Date: 2018/6/10
  * Time: 0:23
  */
-        echo 'member/info';
+        echo 'member/info2';
 ?>
-{{$name}} {{$age}}  {{$city}}
+{{$name}} {{$age}}  {{$city}} {{$id}}

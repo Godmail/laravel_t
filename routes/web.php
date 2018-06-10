@@ -77,4 +77,23 @@ Route::get('memberc/info2',[
     'as'=>'memberinfo'
 ]);
 
-Route::get('memberc/info3/{id}','MemberController@info2')->where('id','[0-9]+');
+Route::get('memberc/info2/{id}','MemberController@info2')->where('id','[0-9]+');
+
+Route::get('test/{id}','MemberController@info3')->where('id','[0-9]+');
+
+Route::group(['prefix'=>'test'],function (){
+    Route::get('info4/{id?}','MemberController@info4');
+});
+
+Route::group(['prefix'=>'student'],function(){
+    Route::get('test1',['uses'=>'StudentController@test1']);
+    Route::get('insert',['uses'=>'StudentController@insert']);
+    Route::get('update',['uses'=>'StudentController@update']);
+    Route::get('delete/{id?}',['uses'=>'StudentController@delete']);
+    Route::get('query1',['uses'=>'StudentController@query1']);
+    Route::get('query2',['uses'=>'StudentController@query2']);
+    Route::get('query3',['uses'=>'StudentController@query3']);
+    Route::get('query4',['uses'=>'StudentController@query4']);
+    Route::get('query5',['uses'=>'StudentController@query5']);
+    Route::get('orm1',['uses'=>'StudentController@orm1']);
+});

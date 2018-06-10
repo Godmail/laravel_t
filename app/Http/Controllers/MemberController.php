@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Member;
+
 class MemberController extends Controller{
     public function info()
     {
@@ -21,6 +23,22 @@ class MemberController extends Controller{
     }
     public function info2($id)
     {
+        Member::getMember();
         return 'Member id:'.$id;
+    }
+    public function info3($id)
+    {
+        Member::getMember();
+        return 'Member id:'.$id;
+    }
+
+    public  function info4($id='23'){
+//        return view('member/info',[
+//           'name'=>'Godmail',
+//            'id'=>$id,
+//            'age'=>'30',
+//            'city'=>'Nantong',
+//        ]);
+        return Member::getMember();
     }
 }
