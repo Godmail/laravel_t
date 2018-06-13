@@ -96,4 +96,5 @@ Route::group(['prefix'=>'student'],function(){
     Route::get('query4',['uses'=>'StudentController@query4']);
     Route::get('query5',['uses'=>'StudentController@query5']);
     Route::get('orm1',['uses'=>'StudentController@orm1']);
+    Route::get('orm2',['uses'=>'StudentController@orm2']);
 });

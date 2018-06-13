@@ -189,4 +189,37 @@ class StudentController extends Controller{
 //        dd($students);
     }
 
+    public  function orm2(){
+//        // 使用模型新增数据
+//        $student= new Student();
+//        $student->name='Godmail';
+//        $student->age=31;
+//        $bool=$student->save();
+//        var_dump($bool);
+//        dd($student);
+
+//        //使用模型取数据
+//        $student=Student::find(8);
+//        echo $student->created_at;
+//
+
+        //使用模型Create方法新增数据
+//        $student =Student::create(
+//          ['name'=>'CreateUser','age'=>21]
+//        );
+//        dd($student);
+
+        //firstOrCreate() 查找。如果没有则新增
+//        $student=Student::firstOrCreate(
+//            ['name'=>'CreateUser','age'=>22]
+//        );
+//        dd($student);
+        //firstOrNew()  查找，如果没有则新建实例，但不保存，如果需要 要手动save
+        $student=Student::firstOrNew(
+            ['name'=>'CreateUser','age'=>22]
+        );
+echo         $bool=$student->save();
+        dd($student);
+    }
+
 }
