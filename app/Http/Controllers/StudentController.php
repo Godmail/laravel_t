@@ -204,9 +204,9 @@ class StudentController extends Controller{
 //
 
         //使用模型Create方法新增数据
-//        $student =Student::create(
-//          ['name'=>'CreateUser','age'=>21]
-//        );
+        $student =Student::create(
+          ['name'=>'CreateUser','age'=>21]
+        );
 //        dd($student);
 
         //firstOrCreate() 查找。如果没有则新增
@@ -215,11 +215,35 @@ class StudentController extends Controller{
 //        );
 //        dd($student);
         //firstOrNew()  查找，如果没有则新建实例，但不保存，如果需要 要手动save
-        $student=Student::firstOrNew(
-            ['name'=>'CreateUser','age'=>22]
-        );
-echo         $bool=$student->save();
+//        $student=Student::firstOrNew(
+//            ['name'=>'CreateUser','age'=>22]
+//        );
+//echo         $bool=$student->save();
         dd($student);
+    }
+
+    public function  orm3(){
+        //通过模型更新数据
+//        $student=Student::find(15);
+//        $student->name='Kitt2y';
+//        echo $student->save();
+
+        $num=Student::where('id','>',10)->update(
+            ['age'=>28]
+        );
+        var_dump($num);
+    }
+    public function orm4(){
+        //通过模型删除
+//        $student=Student::find(13);
+//        $bool=$student->delete();
+//        var_dump($bool);
+
+        //通过主键删除
+//        Student::destroy(12);
+//        Student::destroy(10,11);
+//        Student::destroy([10,11]);
+        Student::where('id','>',10)->delete();
     }
 
 }
