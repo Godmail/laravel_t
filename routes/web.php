@@ -104,3 +104,5 @@ Route::group(['prefix'=>'student'],function(){
 });
 
 Route::get('url',['as'=>'url1','uses'=>'StudentController@urlTest']);
+Route::get('request1',['as'=>'request','uses'=>'StudentController@request1']);
+Route::get('student/request1',['as'=>'request','uses'=>'StudentController@request1']);

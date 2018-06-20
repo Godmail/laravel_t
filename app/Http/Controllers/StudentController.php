@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller{
@@ -255,5 +256,30 @@ class StudentController extends Controller{
 
     public function urlTest(){
         return 'urlTest';
+    }
+
+    public function request1(Request $request ){
+        //1、取值
+//        echo $request->input('name');
+//        echo $request->input('sex','未知');
+//        if($request->has('class')){
+//            echo $request->has('class');
+//        }else{
+//            echo '无该参数';
+//        }
+//        $res=$request->all();
+//        dd($res);
+
+        //2、判断请求的类型
+//        echo         $request->method();
+//        echo $request->isMethod('GET')?'yes':"no";
+
+        $res= $request->ajax();
+        var_dump($res);
+
+//        $res=$request->is('student/*');
+//        var_dump($res);
+
+        echo $request->url();
     }
 }
