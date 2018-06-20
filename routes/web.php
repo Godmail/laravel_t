@@ -65,7 +65,7 @@ Route::group(['prefix'=>'member'],function(){
 
 //路由中输出视图
 Route::get('view',function(){
-    return view('welcome');
+    return view('layouts');
 });
 
 ///////////关联控制器
@@ -99,4 +99,8 @@ Route::group(['prefix'=>'student'],function(){
     Route::get('orm2',['uses'=>'StudentController@orm2']);
     Route::get('orm3',['uses'=>'StudentController@orm3']);
     Route::get('orm4',['uses'=>'StudentController@orm4']);
+    Route::get('section1',['uses'=>'StudentController@section1']);
+    Route::get('urlTest',['as'=>'url2','uses'=>'StudentController@urlTest']);
 });
+
+Route::get('url',['as'=>'url1','uses'=>'StudentController@urlTest']);

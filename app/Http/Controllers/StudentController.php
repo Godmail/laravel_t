@@ -246,4 +246,14 @@ class StudentController extends Controller{
         Student::where('id','>',10)->delete();
     }
 
+    public function section1(){
+        $students=Student::get();
+        $name='Godmail2';
+        $arr=['Godmail','Jude'];
+        return view('student.section1',['name'=>$name,'arr'=>$arr,'students'=>$students]);
+    }
+
+    public function urlTest(){
+        return 'urlTest';
+    }
 }
