@@ -65,7 +65,7 @@ Route::group(['prefix'=>'member'],function(){
 
 //路由中输出视图
 Route::get('view',function(){
-    return view('welcome');
+    return view('layouts');
 });
 
 ///////////关联控制器
@@ -96,4 +96,27 @@ Route::group(['prefix'=>'student'],function(){
     Route::get('query4',['uses'=>'StudentController@query4']);
     Route::get('query5',['uses'=>'StudentController@query5']);
     Route::get('orm1',['uses'=>'StudentController@orm1']);
+    Route::get('orm2',['uses'=>'StudentController@orm2']);
+    Route::get('orm3',['uses'=>'StudentController@orm3']);
+    Route::get('orm4',['uses'=>'StudentController@orm4']);
+    Route::get('section1',['uses'=>'StudentController@section1']);
+    Route::get('urlTest',['as'=>'url2','uses'=>'StudentController@urlTest']);
 });
+
+Route::get('url',['as'=>'url1','uses'=>'StudentController@urlTest']);
+Route::get('request1',['as'=>'request','uses'=>'StudentController@request1']);
+Route::get('student/request1',['as'=>'request','uses'=>'StudentController@request1']);
+
+Route::group(['middleware'=>['web']],function(){
+
+    Route::get('session1',['uses'=>'StudentController@session1']);
+    Route::get('session2',['as'=>'se','uses'=>'StudentController@session2']);
+});
+
+Route::get('response',['uses'=>'StudentController@response']);
+Route::get('activity0',['uses'=>'StudentController@activity0']);
+Route::get('activity1',['uses'=>'StudentController@activity1']);
+Route::get('activity2',['uses'=>'StudentController@activity2']);
+
+Route::get('post/{id?}',['uses'=>'PostController@post'])->where('id','[0-9]+');
+Route::get('showPost',['uses'=>'PostController@showPost']);
