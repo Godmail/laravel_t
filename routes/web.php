@@ -120,3 +120,4 @@ Route::get('activity2',['uses'=>'StudentController@activity2']);
 
 Route::get('post/{id?}',['uses'=>'PostController@post'])->where('id','[0-9]+');
 Route::get('showPost',['uses'=>'PostController@showPost']);
+Route::get('payroll',['uses'=>'PayrollTest@payroll']);
