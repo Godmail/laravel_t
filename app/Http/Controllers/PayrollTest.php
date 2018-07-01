@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\DB;
 
 class PayrollTest extends  Controller{
     public function  payroll(){
-        $payrolls=DB::connection('sqlsrv')->table('his_dispathpayroll')->get();
+        $payrolls=DB::connection('sqlsrv')
+            ->table('his_dispathpayroll')
+            ->get();
         dd($payrolls);
     }
 

@@ -8,12 +8,22 @@
 namespace App\Http\Middleware;
 use Closure;
 class Activity{
+    //前置操作
     public function handle($request,Closure $next){
-        if(time()<strtotime('2018-06-23')){
+        if(time()<strtotime('2018-07-02')){
             return redirect('activity0');
         }else{
             return $next($request);
         }
     }
+
+//后置操作 有问题
+//    public function handle($request,Closure $next){
+//        if(time()<strtotime('2018-07-01')){
+//            return redirect('activity0');
+//        }else{
+//            return $next($request);
+//        }
+//    }
 
 }

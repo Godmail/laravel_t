@@ -113,11 +113,22 @@ Route::group(['middleware'=>['web']],function(){
     Route::get('session2',['as'=>'se','uses'=>'StudentController@session2']);
 });
 
-Route::get('response',['uses'=>'StudentController@response']);
-Route::get('activity0',['uses'=>'StudentController@activity0']);
-Route::get('activity1',['uses'=>'StudentController@activity1']);
-Route::get('activity2',['uses'=>'StudentController@activity2']);
-
 Route::get('post/{id?}',['uses'=>'PostController@post'])->where('id','[0-9]+');
 Route::get('showPost',['uses'=>'PostController@showPost']);
 Route::get('payroll',['uses'=>'PayrollTest@payroll']);
+
+Route::get('response',['uses'=>'StudentController@response']);
+
+//宣传
+Route::get('activity0',['uses'=>'StudentController@activity0']);
+//活动。时间控制
+Route::group(['middleware'=>['activity']],function(){
+    Route::get('activity1',['uses'=>'StudentController@activity1']);
+    Route::get('activity2',['uses'=>'StudentController@activity2']);
+});
+
+//项目
+
+Route::get('user/index',['uses'=>'UserController@index']);
+Route::any('user/create',['uses'=>'UserController@create']);
+Route::any('user/save',['uses'=>'UserController@save']);

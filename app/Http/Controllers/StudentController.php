@@ -355,7 +355,10 @@ class StudentController extends Controller{
     public function activity0(){
         return '活动即将开始，敬请期待';
     }
-    public function acitivity1(){
+    public function activity1(){
         return '活动进行中';
+    }
+    public function activity2(){
+        return '活动结束';
     }
 }

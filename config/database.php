@@ -74,7 +74,7 @@ return [
             'database' => env('MS_DB_DATABASE', 'forge'),
             'username' => env('MS_DB_USERNAME', 'forge'),
             'password' => env('MS_DB_PASSWORD', ''),
-            'charset' => 'gb2312',
+            'charset' => 'utf8',
             'prefix' => '',
         ],
 
