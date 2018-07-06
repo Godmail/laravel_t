@@ -4,7 +4,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">新增人员</div>
         <div class="panel-body">
-            <form class="form-horizontal" method="post" action="{{url('user/save')}}">
+            <form class="form-horizontal" method="post" action="">
                 {{--姓名--}}
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">姓名</label>
@@ -33,11 +33,11 @@
 
                     <div class="col-sm-5">
                         <select  name="User[typeX]" class="form-control">
-                            <option value ="日">Volvo</option>
-                            <option value ="甲">Saab</option>
-                            <option value="乙">Opel</option>
-                            <option value="丙">Audi</option>
-                            <option value="丁">Audi</option>
+                            <option value ="日">日</option>
+                            <option value ="甲">甲</option>
+                            <option value="乙">乙</option>
+                            <option value="丙">丙</option>
+                            <option value="丁">丁</option>
                         </select>
                     </div>
                     <div class="col-sm-5">
@@ -66,15 +66,15 @@
                         <p class="form-control-static text-danger">synced只能为整数</p>
                     </div>
                 </div>
-                {{--sectiome--}}
+                {{--sectime--}}
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">sectiome</label>
+                    <label for="name" class="col-sm-2 control-label">sectime</label>
 
                     <div class="col-sm-5">
-                        <input type="text" name="User[sectiome]" class="form-control" id="name" placeholder="请输入sectiome">
+                        <input type="text" name="User[sectime]" class="form-control" id="name" placeholder="请输入sectime">
                     </div>
                     <div class="col-sm-5">
-                        <p class="form-control-static text-danger">sectiome能为空</p>
+                        <p class="form-control-static text-danger">sectime能为空</p>
                     </div>
                 </div>
                 {{--liyang--}}
@@ -83,7 +83,7 @@
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
-                            <input type="radio" name="User[liyang]" value="0"> 否
+                            <input type="radio" name="User[liyang]" value="0" checked> 否
                         </label>
                         <label class="radio-inline" >
                             <input type="radio" name="User[liyang]" value="1"> 是
@@ -99,7 +99,7 @@
 
                     <div class="col-sm-5">
                         <label class="radio-inline">
-                            <input type="radio" name="User[islw]" value="0"> 否
+                            <input type="radio" name="User[islw]" value="0" checked> 否
                         </label>
                         <label class="radio-inline" >
                             <input type="radio" name="User[islw]" value="1"> 是
@@ -111,7 +111,6 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <?php echo method_field('PUT'); ?>
                         <?php echo csrf_field(); ?>
                         <button type="submit" class="btn btn-primary">提交</button>
                     </div>

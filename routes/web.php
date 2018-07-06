@@ -129,6 +129,9 @@ Route::group(['middleware'=>['activity']],function(){
 
 //项目
 
-Route::get('user/index',['uses'=>'UserController@index']);
-Route::any('user/create',['uses'=>'UserController@create']);
-Route::any('user/save',['uses'=>'UserController@save']);
+Route::group(['middleware'=>['web']],function(){
+
+    Route::get('user/index',['uses'=>'UserController@index']);
+    Route::any('user/create',['uses'=>'UserController@create']);
+    Route::any('user/save',['uses'=>'UserController@save']);
+});

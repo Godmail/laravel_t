@@ -13,6 +13,8 @@ class Users extends Model
 {
     protected $table='users';
 
+    protected $fillable=['name','partment','typeX','status','synced','sectime','liyang','islw'];
+
     public $timestamps=true;
 
     protected function getDateFormat()
