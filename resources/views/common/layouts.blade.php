@@ -18,9 +18,9 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h2>轻松学会Laravel</h2>
+            <h2>考勤工资系统-Laravel</h2>
 
-            <p> - 玩转Laravel表单</p>
+            <p> - 雇员管理</p>
         </div>
     </div>
 
@@ -35,10 +35,10 @@
             @section('leftmenu')
                 <div class="list-group">
                     <a href="{{url('user/index')}}" class="list-group-item
-                        {{Request::getPathInfo()=='/user/index'? 'active':''}}">学生列表</a>
+                        {{Request::getPathInfo()=='/user/index'? 'active':''}}">员工列表</a>
 
                     <a href="{{url('user/create')}}" class="list-group-item
-                        {{Request::getPathInfo()=='/user/create'? 'active':''}}">新增学生</a>
+                        {{Request::getPathInfo()=='/user/create'? 'active':''}}">新增员工</a>
                 </div>
             @show
         </div>
