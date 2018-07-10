@@ -17,13 +17,13 @@ class Users extends Model
 
     public $timestamps=true;
 
-    protected function getDateFormat()
-    {
-        return time();
-    }
-    protected function  asDateTime($value)
-    {
-        return $value;
-    }
+//    protected function getDateFormat()
+//    {
+//        return time();
+//    }
+//    protected function  asDateTime($value)
+//    {
+//        return $value;
+//    }
 
 }

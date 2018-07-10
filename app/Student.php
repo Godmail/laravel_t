@@ -28,7 +28,7 @@ class Student extends Model{
         return $val;
     }
     //设置允许批量添加的字段
-    protected $fillable=['name'];
+    protected $fillable=['name','age'];
     //不允许批量添加的字段
-    protected $guarded=['age'];
+//    protected $guarded=['age'];
 }

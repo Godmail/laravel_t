@@ -207,7 +207,7 @@ class StudentController extends Controller{
 
         //使用模型Create方法新增数据
         $student =Student::create(
-          ['name'=>'CreateUser','age'=>21]
+          ['age'=>21,'name'=>'CreateUser',]
         );
 //        dd($student);
 

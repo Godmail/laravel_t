@@ -7,7 +7,6 @@
  */
 namespace  App\Http\Controllers;
 
-use App\User;
 use App\Users;
 use Illuminate\Http\Request;
 
@@ -27,7 +26,7 @@ class  UserController extends Controller{
 
             $data = $request->input('User');
 //           dd($data);
-            if (User::create($data)) {
+            if (Users::create($data)) {
                 return redirect('user/index')->with('success','添加成功');
             } else {
                 return redirect()->back();
@@ -39,7 +38,7 @@ class  UserController extends Controller{
     public function save(Request $request){
         $data=$request->input('User');
 //       dd($data);
-        $user= new User();
+        $user= new Users();
         $user->name=$data['name'];
         $user->partment=$data['partment'];
         $user->typeX=$data['typeX'];
