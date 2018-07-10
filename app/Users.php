@@ -32,7 +32,7 @@ class Users extends Model
 //        return $value;
 //    }
 
-    public function type($ind=null){
+    public function typeX($ind=null){
         $arr =[
             self::type_0=>'日',
             self::type_1=>'甲',
@@ -45,4 +45,15 @@ class Users extends Model
         }
         return $arr;
     }
+
+    public function judge($ind){
+    $arr =[
+        0=>'否',
+        1=>'是',
+    ];
+    if($ind !== null){
+        return array_key_exists($ind,$arr)?$arr[$ind]:$arr[0];
+    }
+    return $arr;
+}
 }

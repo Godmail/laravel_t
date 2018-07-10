@@ -35,7 +35,7 @@
             @section('leftmenu')
                 <div class="list-group">
                     <a href="{{url('user/index')}}" class="list-group-item
-                        {{Request::getPathInfo()=='/user/index'? 'active':''}}">员工列表</a>
+                        {{Request::getPathInfo()!='/user/create'? 'active':''}}">员工列表</a>
 
                     <a href="{{url('user/create')}}" class="list-group-item
                         {{Request::getPathInfo()=='/user/create'? 'active':''}}">新增员工</a>

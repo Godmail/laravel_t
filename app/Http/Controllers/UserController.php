@@ -34,8 +34,9 @@ class  UserController extends Controller{
                 'User.type'=>'required',
                 'User.type'=>'integer',
                 'User.status'=>'integer',
-                'User.liyang'=>'integer',
-                'User.islw'=>'integer',
+                'User.synced'=>'integer',
+                'User.liyang'=>'required|integer',
+                'User.islw'=>'required|integer',
 
             ],[
                 'required'=>':attribute 为必填项',
@@ -59,8 +60,9 @@ class  UserController extends Controller{
                 'User.partment'=>'required|min:2|max:20',
                 'User.type'=>'required|integer',
                 'User.status'=>'integer',
-                'User.liyang'=>'integer',
-                'User.islw'=>'integer',
+                'User.synced'=>'integer',
+                'User.liyang'=>'required|integer',
+                'User.islw'=>'required|integer',
 
             ],[
                 'required'=>':attribute 为必填项',
@@ -111,4 +113,61 @@ class  UserController extends Controller{
         }
 
     }
+    public function update(Request $request,$id){
+        $user=Users::find($id);
+
+        if($request->isMethod('POST')) {
+            $this->validate($request,[
+                'User.name'=>'required|min:2|max:20',
+                'User.partment'=>'required|min:2|max:20',
+                'User.type'=>'required|integer',
+                'User.status'=>'integer',
+                'User.synced'=>'integer',
+                'User.liyang'=>'required|integer',
+                'User.islw'=>'required|integer',
+
+            ],[
+                'required'=>':attribute 为必填项',
+                'min'=>':attribute 过短',
+                'max'=>':attribute 过长',
+                'integer'=>':attribute 必须为整数'
+            ],[
+                'User.name'=>'姓名',
+                'User.partment'=>'部门',
+                'User.type'=>'班种',
+                'User.status'=>'状态',
+                'User.liyang'=>'是否立洋',
+                'User.islw'=>'是否劳务',
+            ]);
+            $data = $request->input('User');
+            if (Users::where('id','=',$id)->update($data)) {
+                return redirect('user/index')->with('success','修改成功-'.$id);
+            } else {
+                return redirect()->back();
+            }
+        }
+        return view('user.update',[
+            'user'=>$user
+        ]);
+    }
+
+    public function detail($id){
+
+        $user=Users::find($id);
+        return view('user.detail',[
+            'user'=>$user
+        ]);
+    }
+
+    public function delete($id){
+
+        $user=Users::find($id);
+        if($user->delete()){
+            return redirect('user/index')->with('success','删除成功-'.$id);
+        }else{
+            return redirect('user/index')->with('error','删除失败-'.$id);
+        }
+    }
 }
+
+

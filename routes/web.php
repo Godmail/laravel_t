@@ -134,4 +134,7 @@ Route::group(['middleware'=>['web']],function(){
     Route::get('user/index',['uses'=>'UserController@index']);
     Route::any('user/create',['uses'=>'UserController@create']);
     Route::any('user/save',['uses'=>'UserController@save']);
+    Route::any('user/update/{id}',['uses'=>'UserController@update']);
+    Route::any('user/detail/{id}',['uses'=>'UserController@detail']);
+    Route::any('user/delete/{id}',['uses'=>'UserController@delete']);
 });

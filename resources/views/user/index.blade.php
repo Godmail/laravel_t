@@ -3,7 +3,7 @@
     @include('common/message')
     <!-- 自定义内容区域 -->
     <div class="panel panel-default">
-        <div class="panel-heading">学生列表</div>
+        <div class="panel-heading">人员列表</div>
         <table class="table table-striped table-hover table-responsive">
             <thead>
             <tr>
@@ -21,12 +21,12 @@
                         <th scope="row">{{$user->id}}</th>
                         <td>{{$user->name}}</td>
                         <td>{{$user->partment}}</td>
-                        <td>{{$user->type($user->type)}}</td>
+                        <td>{{$user->typeX($user->type)}}</td>
                         <td>{{$user->sectime}}</td>
                         <td>
-                            <a href="">详情</a>
-                            <a href="">修改</a>
-                            <a href="">删除</a>
+                            <a href="{{url('user/detail',['id'=>$user->id,])}}">详情</a>
+                            <a href="{{url('user/update',['id'=>$user->id,])}}">修改</a>
+                            <a href="{{url('user/delete',['id'=>$user->id,])}}">删除</a>
                         </td>
                     </tr>
             @endforeach
