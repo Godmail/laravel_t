@@ -9,9 +9,9 @@
             <tr>
                 <th>ID</th>
                 <th>姓名</th>
-                <th>年龄</th>
-                <th>性别</th>
-                <th>添加时间</th>
+                <th>部门</th>
+                <th>班种</th>
+                <th>社保时间</th>
                 <th width="120">操作</th>
             </tr>
             </thead>
@@ -20,8 +20,8 @@
                     <tr>
                         <th scope="row">{{$user->id}}</th>
                         <td>{{$user->name}}</td>
-                        <td>{{$user->synced}}</td>
-                        <td>{{$user->type}}</td>
+                        <td>{{$user->partment}}</td>
+                        <td>{{$user->type($user->type)}}</td>
                         <td>{{$user->sectime}}</td>
                         <td>
                             <a href="">详情</a>
